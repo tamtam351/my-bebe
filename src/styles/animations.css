@@ -1,0 +1,77 @@
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInBlur {
+  from { opacity: 0; filter: blur(10px); transform: scale(0.96); }
+  to { opacity: 1; filter: blur(0); transform: scale(1); }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+@keyframes floatYSlow {
+  0%, 100% { transform: translateY(0) rotate(var(--r, 0deg)); }
+  50% { transform: translateY(-8px) rotate(var(--r, 0deg)); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { box-shadow: 0 0 18px rgba(83, 109, 255, 0.35); }
+  50% { box-shadow: 0 0 32px rgba(83, 109, 255, 0.6); }
+}
+
+@keyframes softPulse {
+  0%, 100% { opacity: 0.75; }
+  50% { opacity: 1; }
+}
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; }
+  50% { opacity: 0.9; }
+}
+
+@keyframes driftUp {
+  from { transform: translateY(0); opacity: 0; }
+  10% { opacity: 1; }
+  90% { opacity: 1; }
+  to { transform: translateY(-120px); opacity: 0; }
+}
+
+@keyframes shake {
+  10%, 90% { transform: translateX(-1px); }
+  20%, 80% { transform: translateX(2px); }
+  30%, 50%, 70% { transform: translateX(-4px); }
+  40%, 60% { transform: translateX(4px); }
+}
+
+@keyframes wobble {
+  0%, 100% { transform: rotate(0); }
+  25% { transform: rotate(-3deg); }
+  75% { transform: rotate(3deg); }
+}
+
+@keyframes spinSlow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes bloom {
+  0% { opacity: 0; transform: scale(0.8); }
+  50% { opacity: 1; }
+  100% { opacity: 0; transform: scale(2.2); }
+}
+
+.anim-fade-in { animation: fadeIn 1s var(--ease-cinematic) both; }
+.anim-fade-in-up { animation: fadeInUp 0.9s var(--ease-cinematic) both; }
+.anim-fade-in-blur { animation: fadeInBlur 1.4s var(--ease-cinematic) both; }
+.anim-float { animation: floatY 5s ease-in-out infinite; }
+.anim-shake { animation: shake 0.5s; }
+.anim-wobble { animation: wobble 0.6s ease-in-out; }
