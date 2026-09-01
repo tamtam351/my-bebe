@@ -1,28 +1,20 @@
-import { useEffect, useState } from 'react'
-
-/**
- * Wraps a scene and animates it in with a cinematic fade/blur/scale.
- * Every major scene should be rendered inside this.
- */
-export default function SceneTransition({ children, className = '', duration = 1.2 }) {
-  const [mounted, setMounted] = useState(false)
-
-  useEffect(() => {
-    const id = requestAnimationFrame(() => setMounted(true))
-    return () => cancelAnimationFrame(id)
-  }, [])
-
+/** Wraps each scene in a page-turning scrapbook sheet. */
+export default function SceneTransition({
+  children,
+  className = "",
+  duration = 1.2,
+}) {
   return (
     <div
-      className={`scene ${className}`}
+      className={`scene page-sheet ${className}`}
       style={{
-        opacity: mounted ? 1 : 0,
-        filter: mounted ? 'blur(0)' : 'blur(10px)',
-        transform: mounted ? 'scale(1)' : 'scale(0.97)',
-        transition: `opacity ${duration}s var(--ease-cinematic), filter ${duration}s var(--ease-cinematic), transform ${duration}s var(--ease-cinematic)`,
+        "--page-turn-duration": `${duration}s`,
       }}
     >
+      <span className="page-stamp" aria-hidden="true">
+        for you ♡
+      </span>
       {children}
     </div>
-  )
+  );
 }

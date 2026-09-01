@@ -1,18 +1,23 @@
 :root {
-  --bg-main: #050319;
-  --bg-secondary: #09052b;
-  --bg-purple: #100735;
-  --blue-glow: #536dff;
-  --blue-soft: #7188ff;
-  --paper: #f5f0e7;
-  --paper-shadow: rgba(0, 0, 0, 0.45);
-  --text-main: #f8f6ff;
-  --text-muted: #b8b3d0;
-  --gold: #c6a96b;
+  --bg-main: #31242d;
+  --bg-secondary: #5a3843;
+  --bg-purple: #6f4656;
+  --blue-glow: #4d7290;
+  --blue-soft: #38627d;
+  --paper: #fbf0d8;
+  --paper-deep: #e6c99e;
+  --ink: #35232c;
+  --ink-soft: #68434b;
+  --paper-shadow: rgba(49, 29, 35, 0.42);
+  --text-main: #35232c;
+  --text-muted: #725861;
+  --gold: #b87935;
+  --berry: #a94155;
+  --sage: #60745e;
 
-  --font-script: 'Great Vibes', cursive;
-  --font-hand: 'Caveat', cursive;
-  --font-serif: 'Cormorant Garamond', serif;
+  --font-script: "Great Vibes", cursive;
+  --font-hand: "Caveat", cursive;
+  --font-serif: "Cormorant Garamond", serif;
 
   --stage-width: 460px;
   --ease-cinematic: cubic-bezier(0.22, 0.61, 0.36, 1);
@@ -57,8 +62,16 @@ img {
   align-items: center;
   justify-content: center;
   background:
-    radial-gradient(ellipse 70% 50% at 50% 0%, rgba(83, 109, 255, 0.16), transparent 60%),
-    radial-gradient(ellipse 60% 40% at 20% 100%, rgba(83, 109, 255, 0.08), transparent 60%),
+    radial-gradient(
+      circle at 18% 15%,
+      rgba(232, 190, 132, 0.22) 0 1px,
+      transparent 2px
+    ),
+    radial-gradient(
+      circle at 82% 74%,
+      rgba(232, 190, 132, 0.16) 0 1px,
+      transparent 2px
+    ),
     var(--bg-main);
   overflow: hidden;
   position: relative;
@@ -72,9 +85,48 @@ img {
   height: 100dvh;
   overflow: hidden;
   background:
-    radial-gradient(ellipse 80% 60% at 50% 15%, rgba(83, 109, 255, 0.14), transparent 55%),
-    radial-gradient(ellipse 70% 50% at 80% 90%, rgba(198, 169, 107, 0.06), transparent 60%),
-    linear-gradient(180deg, #050319 0%, #0a0530 45%, #120840 100%);
+    linear-gradient(rgba(93, 62, 59, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(93, 62, 59, 0.035) 1px, transparent 1px),
+    radial-gradient(
+      ellipse 90% 70% at 50% 20%,
+      rgba(255, 249, 231, 0.12),
+      transparent 65%
+    ),
+    linear-gradient(135deg, #8e5c62 0%, #573843 46%, #34252f 100%);
+  background-size:
+    17px 17px,
+    17px 17px,
+    auto,
+    auto;
+  perspective: 1200px;
+}
+
+.stage::before,
+.stage::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 20;
+}
+
+.stage::before {
+  inset: 12px;
+  border: 1px dashed rgba(255, 225, 177, 0.5);
+  border-radius: 2px;
+  transform: rotate(-0.25deg);
+}
+
+.stage::after {
+  width: 78px;
+  height: 42px;
+  top: 20px;
+  right: 18px;
+  opacity: 0.5;
+  background:
+    linear-gradient(35deg, transparent 46%, #edcf96 47% 52%, transparent 53%),
+    linear-gradient(-35deg, transparent 46%, #edcf96 47% 52%, transparent 53%);
+  transform: rotate(8deg);
+  animation: doodleWiggle 4.5s ease-in-out infinite;
 }
 
 @media (min-width: 560px) {
@@ -97,6 +149,68 @@ img {
   justify-content: center;
   padding: 32px 24px;
   text-align: center;
+  isolation: isolate;
+  backface-visibility: hidden;
+  transform-origin: left center;
+  animation: pageTurnIn var(--page-turn-duration, 1.2s) var(--ease-cinematic)
+    both;
+  background:
+    linear-gradient(rgba(109, 76, 65, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(109, 76, 65, 0.035) 1px, transparent 1px),
+    radial-gradient(
+      circle at 20% 18%,
+      rgba(255, 252, 238, 0.72),
+      transparent 38%
+    ),
+    var(--paper);
+  background-size:
+    19px 19px,
+    19px 19px,
+    auto,
+    auto;
+  color: var(--ink);
+  box-shadow:
+    inset 0 0 0 1px rgba(111, 76, 68, 0.15),
+    inset 12px 0 22px rgba(111, 76, 68, 0.08);
+}
+
+.scene::before,
+.scene::after {
+  position: absolute;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.scene::before {
+  content: "";
+  inset: 26px 20px;
+  border: 1px dashed rgba(110, 73, 69, 0.28);
+  transform: rotate(0.35deg);
+}
+
+.scene::after {
+  content: "✦  ·  ♡  ·  ✎";
+  right: 24px;
+  bottom: 20px;
+  color: rgba(169, 65, 85, 0.5);
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  transform: rotate(-8deg);
+  animation: inkDrift 5s ease-in-out infinite;
+}
+
+.page-stamp {
+  position: absolute;
+  top: 22px;
+  left: 24px;
+  z-index: 3;
+  color: var(--berry);
+  font-family: var(--font-hand);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  transform: rotate(-7deg);
+  opacity: 0.72;
+  animation: stampWiggle 6s ease-in-out infinite;
 }
 
 .scene--top {
@@ -108,7 +222,7 @@ img {
   font-family: var(--font-serif);
   font-style: italic;
   font-size: 1rem;
-  color: var(--text-muted);
+  color: var(--ink-soft);
   letter-spacing: 0.03em;
   max-width: 280px;
   line-height: 1.5;
@@ -117,15 +231,15 @@ img {
 .script-title {
   font-family: var(--font-script);
   font-size: clamp(2.4rem, 11vw, 3.4rem);
-  color: var(--text-main);
-  text-shadow: 0 0 30px rgba(113, 136, 255, 0.35);
+  color: var(--berry);
+  text-shadow: 2px 2px 0 rgba(184, 121, 53, 0.2);
   line-height: 1.2;
   margin: 0;
 }
 
 .hand-text {
   font-family: var(--font-hand);
-  color: var(--text-main);
+  color: var(--ink);
 }
 
 .muted {
@@ -137,7 +251,9 @@ img {
   font-style: italic;
   font-size: 0.95rem;
   letter-spacing: 0.12em;
-  color: var(--blue-soft);
+  color: var(--berry);
+  text-decoration: underline wavy rgba(169, 65, 85, 0.55);
+  text-underline-offset: 5px;
 }
 
 .sr-only {

@@ -9,7 +9,11 @@
   width: 260px;
   height: 260px;
   transform: translate(-50%, -50%);
-  background: radial-gradient(circle, rgba(83, 109, 255, 0.35) 0%, rgba(83, 109, 255, 0) 70%);
+  background: radial-gradient(
+    circle,
+    rgba(83, 109, 255, 0.35) 0%,
+    rgba(83, 109, 255, 0) 70%
+  );
   filter: blur(4px);
   pointer-events: none;
   animation: softPulse 4s ease-in-out infinite;
@@ -20,7 +24,8 @@
   width: 96px;
   height: 100px;
   animation: floatY 5s ease-in-out infinite;
-  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 18px rgba(83, 109, 255, 0.35));
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 18px rgba(83, 109, 255, 0.35));
 }
 
 .padlock.is-open .shackle {
@@ -33,7 +38,8 @@
 }
 
 .padlock.is-glowing {
-  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 34px rgba(113, 136, 255, 0.85));
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 0 34px rgba(113, 136, 255, 0.85));
 }
 
 .shackle {
@@ -59,11 +65,13 @@
   border-radius: 14px;
   background: linear-gradient(160deg, #2a2652 0%, #171335 60%, #0d0a24 100%);
   border: 1px solid rgba(148, 160, 255, 0.35);
-  box-shadow: inset 0 2px 4px rgba(255, 255, 255, 0.12), inset 0 -8px 16px rgba(0, 0, 0, 0.5);
+  box-shadow:
+    inset 0 2px 4px rgba(255, 255, 255, 0.12),
+    inset 0 -8px 16px rgba(0, 0, 0, 0.5);
 }
 
 .lock-body::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 22px;
   left: 50%;
@@ -76,7 +84,7 @@
 }
 
 .lock-body::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 30px;
   left: 50%;
@@ -100,12 +108,14 @@
   text-align: center;
   font-size: 1.3rem;
   font-family: var(--font-serif);
-  color: var(--text-main);
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(184, 179, 208, 0.35);
+  color: var(--ink);
+  background: rgba(255, 255, 255, 0.52);
+  border: 1px solid rgba(104, 67, 75, 0.42);
   border-radius: 10px;
   letter-spacing: 0.05em;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition:
+    border-color 0.3s ease,
+    box-shadow 0.3s ease;
 }
 
 .birthday-inputs input:nth-child(3) {
@@ -125,15 +135,17 @@
 .unlock-button {
   margin-top: 6px;
   padding: 14px 34px;
-  background: rgba(9, 5, 43, 0.4);
-  border: 1px solid rgba(113, 136, 255, 0.5);
+  background: var(--berry);
+  border: 1px solid rgba(75, 32, 45, 0.5);
   border-radius: 999px;
-  color: var(--text-main);
+  color: #fff8eb;
   font-family: var(--font-serif);
   font-size: 1rem;
   letter-spacing: 0.08em;
   animation: pulseGlow 3.2s ease-in-out infinite;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .unlock-button:hover {
@@ -162,7 +174,11 @@
   position: absolute;
   inset: 0;
   pointer-events: none;
-  background: radial-gradient(circle at 50% 45%, rgba(113, 136, 255, 0.9), rgba(113, 136, 255, 0) 60%);
+  background: radial-gradient(
+    circle at 50% 45%,
+    rgba(113, 136, 255, 0.9),
+    rgba(113, 136, 255, 0) 60%
+  );
   opacity: 0;
 }
 

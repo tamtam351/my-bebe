@@ -9,15 +9,19 @@
   max-width: 320px;
   padding: 18px;
   border-radius: 18px;
-  background: linear-gradient(160deg, rgba(255,255,255,0.05), rgba(255,255,255,0.01));
-  border: 1px solid rgba(184, 179, 208, 0.18);
-  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  background: rgba(255, 250, 235, 0.58);
+  border: 1px solid rgba(104, 67, 75, 0.22);
+  box-shadow: 0 12px 28px var(--paper-shadow);
 }
 
 .music-frame-glow {
   position: absolute;
   inset: -30px;
-  background: radial-gradient(circle at 50% 20%, rgba(83, 109, 255, 0.25), transparent 65%);
+  background: radial-gradient(
+    circle at 50% 20%,
+    rgba(83, 109, 255, 0.25),
+    transparent 65%
+  );
   pointer-events: none;
   z-index: -1;
   transition: opacity 0.6s ease;
@@ -59,15 +63,30 @@
   animation: eqBounce 0.9s ease-in-out infinite;
 }
 
-.equalizer span:nth-child(1) { animation-delay: 0s; }
-.equalizer span:nth-child(2) { animation-delay: 0.15s; }
-.equalizer span:nth-child(3) { animation-delay: 0.3s; }
-.equalizer span:nth-child(4) { animation-delay: 0.1s; }
-.equalizer span:nth-child(5) { animation-delay: 0.25s; }
+.equalizer span:nth-child(1) {
+  animation-delay: 0s;
+}
+.equalizer span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.equalizer span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.equalizer span:nth-child(4) {
+  animation-delay: 0.1s;
+}
+.equalizer span:nth-child(5) {
+  animation-delay: 0.25s;
+}
 
 @keyframes eqBounce {
-  0%, 100% { height: 20%; }
-  50% { height: 100%; }
+  0%,
+  100% {
+    height: 20%;
+  }
+  50% {
+    height: 100%;
+  }
 }
 
 .featured-song-card {
@@ -78,8 +97,8 @@
   max-width: 320px;
   padding: 12px 16px;
   border-radius: 14px;
-  background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(198, 169, 107, 0.25);
+  background: rgba(255, 250, 235, 0.7);
+  border: 1px solid rgba(184, 121, 53, 0.42);
   text-align: left;
 }
 
@@ -92,7 +111,7 @@
 .featured-song-title {
   font-family: var(--font-serif);
   font-size: 1rem;
-  color: var(--text-main);
+  color: var(--ink);
 }
 
 .featured-song-artist {
