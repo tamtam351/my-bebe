@@ -71,7 +71,7 @@ export const birthdayContent = {
         "I hope this year brings you everything you deserve, and even the things you haven't let yourself ask for yet.",
         'Wherever you go, whatever you do — I hope you always know how loved you are.',
       ],
-      closing: 'Happy birthday, my once in a lifetime.',
+      closing: 'Happy birthday, My special person.',
       signoff: 'Made with love, just for you.',
     },
   },
