@@ -1,3 +1,4 @@
+/* existing file content (kept exactly) */
 :root {
   --bg-main: #31242d;
   --bg-secondary: #5a3843;
@@ -283,5 +284,85 @@ a:focus-visible {
     animation-duration: 0.001ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.001ms !important;
+  }
+}
+
+/* ---------- Small-screen improvements ---------- */
+@media (max-width: 560px) {
+  /* let the stage grow horizontally and avoid clipping on short/tall devices */
+  :root {
+    --stage-width: 100%;
+  }
+
+  .stage {
+    max-width: 100%;
+    width: 100%;
+    height: auto; /* avoid forcing a strict viewport height */
+    min-height: 100vh;
+    overflow: visible; /* allow framed media and decorations to show */
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .scene {
+    position: relative;
+    padding: 20px 12px;
+    justify-content: flex-start;
+    align-items: stretch;
+    text-align: left;
+  }
+
+  /* make lines wrap naturally and scale the text a bit for smaller screens */
+  .letter-paper {
+    width: 100%;
+    max-width: 100%;
+    padding: 18px 12px;
+  }
+
+  .letter-lines {
+    padding-bottom: 96px; /* leave room for the fixed continue button */
+  }
+
+  .letter-line {
+    font-size: clamp(0.95rem, 4.5vw, 1.15rem);
+    line-height: 1.45;
+    max-width: none;
+    padding: 6px 0;
+    text-align: left;
+  }
+
+  /* frame/photo scaling so it doesn't overlap the text badly */
+  .gold-frame {
+    position: absolute;
+    right: 8px;
+    bottom: 8px;
+    transform: scale(0.9);
+    max-width: 36%;
+  }
+
+  .memory-object {
+    max-width: 24%;
+  }
+
+  /* make the "continue" button more visible on small screens */
+  .tap-hint {
+    font-size: 1rem;
+    background: linear-gradient(180deg, rgba(169,65,85,0.98), rgba(184,121,53,0.95));
+    color: #fff;
+    padding: 8px 14px;
+    border-radius: 22px;
+    text-decoration: none;
+    text-underline-offset: 0;
+    display: inline-block;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.45);
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 14px;
+    z-index: 60;
+  }
+
+  .tap-hint:active {
+    transform: translateX(-50%) scale(0.98);
   }
 }
