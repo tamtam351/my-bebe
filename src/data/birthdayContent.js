@@ -13,7 +13,7 @@ export const birthdayContent = {
   birthday: {
     day: 7,
     month: 9,
-    year: 2010,
+    year: 2010
   },
 
   messages: {
@@ -22,12 +22,12 @@ export const birthdayContent = {
       subheading: 'A little world made just for you ♡',
       instruction: 'Enter your birthday to unlock',
       wrong: ['Not quite, birthday girl... ♡', 'Try again.'],
-      button: 'UNLOCK ♡',
+      button: 'UNLOCK ♡'
     },
 
     welcome: {
       greeting: 'Heyyy',
-      cta: 'TAP FOR SURPRISE',
+      cta: 'TAP FOR SURPRISE'
     },
 
     chapterTitle: 'Once In A Lifetime',
@@ -36,18 +36,18 @@ export const birthdayContent = {
       // Shown line by line. Keep paragraphs short — they reveal one at a time.
       paragraphs: [
         'Happy birthday, my love.',
-        "I wanted to make something that was more than just a message...",
+        'I wanted to make something that was more than just a message...',
         'something you could actually open, explore, and keep.',
         'Every little memory means more to me than I probably know how to say.',
         'I hope this reminds you just how special you are.',
-        'Happy birthday ❤️',
-      ],
+        'Happy birthday ❤️'
+      ]
     },
 
     musicIntro: [
       'Of all the songs in the world...',
       'This one had to be here.',
-      'Because somehow, certain songs just feel like certain people.',
+      'Because somehow, certain songs just feel like certain people.'
     ],
     musicReveal: 'the soundtrack of you ♡',
 
@@ -55,25 +55,25 @@ export const birthdayContent = {
       'Some memories are pictures...',
       'Some are songs.',
       'But some people...',
-      'become the memory.',
+      'become the memory.'
     ],
 
     envelope: {
       intro: "There's one more thing...",
-      cta: 'Open it ♡',
+      cta: 'Open it ♡'
     },
 
     finalLetter: {
       greeting: 'My love,',
       paragraphs: [
         "Another year of you exists now, and I still can't quite believe how lucky I am to know you.",
-        "Every memory in this little world is real — the photos, the songs, the small ordinary moments that somehow became the ones I never want to forget.",
+        'Every memory in this little world is real — the photos, the songs, the small ordinary moments that somehow became the ones I never want to forget.',
         "I hope this year brings you everything you deserve, and even the things you haven't let yourself ask for yet.",
-        'Wherever you go, whatever you do — I hope you always know how loved you are.',
+        'Wherever you go, whatever you do — I hope you always know how loved you are.'
       ],
       closing: 'Happy birthday, My special person.',
-      signoff: 'Made with love, just for you.',
-    },
+      signoff: 'From your crazy stalker ♡'
+    }
   },
 
   music: {
@@ -87,8 +87,8 @@ export const birthdayContent = {
     featuredSong: {
       title: 'Treat You Better',
       artist: 'Shawn Mendes',
-      spotifyTrackUrl: 'https://open.spotify.com/track/3QGsuHI8jO1Rx4JWLUh9jd',
-    },
+      spotifyTrackUrl: 'https://open.spotify.com/track/3QGsuHI8jO1Rx4JWLUh9jd'
+    }
   },
 
   // Replace src with your real photos or video clips.
@@ -106,11 +106,41 @@ export const birthdayContent = {
   // Videos autoplay muted + looped inside their polaroid frame, just like a
   // Live Photo — no sound, no controls, just movement.
   photos: [
-    { src: '/assets/videos/1.mp4', rotation: -6, size: 'medium', caption: 'the beginning' },
-    { src: '/assets/videos/2.mp4', rotation: 4, size: 'large', caption: 'that day ♡' },
-    { src: '/assets/videos/3.mp4', rotation: -3, size: 'small', caption: 'youuuuu' },
-    { src: '/assets/videos/4.mp4', rotation: 7, size: 'medium', caption: 'Amore mio' },
-    { src: '/assets/videos/5.mp4', rotation: -8, size: 'small', caption: 'My favorite' },
-    { src: '/assets/videos/6.mp4', rotation: 2, size: 'medium', caption: 'mi therapisttt' },
-  ],
+    {
+      src: '/assets/videos/1.mp4',
+      rotation: -6,
+      size: 'medium',
+      caption: 'the beginning'
+    },
+    {
+      src: '/assets/videos/2.mp4',
+      rotation: 4,
+      size: 'large',
+      caption: 'that day ♡'
+    },
+    {
+      src: '/assets/videos/3.mp4',
+      rotation: -3,
+      size: 'small',
+      caption: 'youuuuu'
+    },
+    {
+      src: '/assets/videos/4.mp4',
+      rotation: 7,
+      size: 'medium',
+      caption: 'Amore mio'
+    },
+    {
+      src: '/assets/videos/5.mp4',
+      rotation: -8,
+      size: 'small',
+      caption: 'My favorite'
+    },
+    {
+      src: '/assets/videos/6.mp4',
+      rotation: 2,
+      size: 'medium',
+      caption: 'mi therapisttt'
+    }
+  ]
 }
