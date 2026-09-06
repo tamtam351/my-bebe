@@ -356,6 +356,73 @@
   pointer-events: none;
 }
 
+@media (max-width: 559px) {
+  .letter-scene {
+    justify-content: flex-start;
+    padding: max(48px, 8vh) 14px 76px;
+  }
+
+  .letter-paper {
+    width: min(100%, 340px);
+    max-height: calc(100dvh - 142px);
+    padding: 24px 20px 72px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .letter-line {
+    font-size: clamp(1.15rem, 5.4vw, 1.32rem);
+    line-height: 1.32;
+  }
+
+  .letter-scene > .letter-camera,
+  .letter-scene > .letter-vinyl {
+    bottom: 70px !important;
+  }
+
+  .letter-scene > .letter-camera {
+    left: 14px !important;
+  }
+
+  .letter-scene > .letter-vinyl {
+    right: 14px !important;
+  }
+
+  .letter-continue {
+    position: absolute !important;
+    bottom: max(18px, env(safe-area-inset-bottom)) !important;
+    left: 50%;
+    z-index: 5;
+    min-width: 142px;
+    min-height: 44px;
+    margin: 0 !important;
+    padding: 10px 18px;
+    border-radius: 999px;
+    background: rgba(247, 242, 232, 0.86) !important;
+    box-shadow: 0 5px 16px rgba(54, 47, 74, 0.16);
+    transform: translateX(-50%);
+  }
+}
+
+@media (max-width: 380px) {
+  .letter-scene {
+    padding-inline: 10px;
+  }
+
+  .letter-paper {
+    max-height: calc(100dvh - 134px);
+    padding-inline: 17px;
+  }
+
+  .letter-scene > .letter-camera,
+  .letter-scene > .letter-vinyl {
+    transform: scale(0.82);
+    transform-origin: bottom center;
+  }
+}
+
 /* ---------- Final letter ---------- */
 
 .final-letter-paper {
